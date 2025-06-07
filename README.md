@@ -1,4 +1,4 @@
-# jSVG <a href="http://www.w3.org/Graphics/SVG/"><img src="doc/svg-logo-v.svg" alt="W3C SVG Logo"/></a>
+# jSVGIcon <a href="http://www.w3.org/Graphics/SVG/"><img src="doc/svg-logo-v.svg" alt="W3C SVG Logo"/></a>
 Lightweight SVG rendering to use in Java UI Widgets. 
 
 Some re-usable widgets and examples are provided for Swing. 
@@ -16,14 +16,14 @@ The library is available as maven artifact.
 ```xml
 <dependency>
  <groupId>io.github.bweng20</groupId>
- <artifactId>jSVG</artifactId>
- <version>1.5</version>
+ <artifactId>jSVGIcon</artifactId>
+ <version>1.6</version>
 </dependency>
 ```
 
 #### Gradle
 ```
-implementation 'io.github.bweng20:jSVG:1.5'
+implementation 'io.github.bweng20:jSVGIcon:1.6'
 ```
 
 The artifact has different classifier.
@@ -57,7 +57,7 @@ As the SVGs can be transformed in any ways, it is also easy to use them for __de
 
 ### How it is done
 
-__jSVG tries to convert SVG elements to Java2D-Shapes__. This reduces the supported features that can be used,
+__jSVGIcon tries to convert SVG elements to Java2D-Shapes__. This reduces the supported features that can be used,
 but the once converted shapes render incredible fast.
 
 The resulting Shapes can be painted on any Graphics2d-instance. Additional style information is handled by a specific "Painter" that sets colors, strokes etc. to match the SVG definitions. The Java2D-shapes (and the Painter) are fully scablable, any transformation (rotation, scale, translate) can be used without losing quality. 
@@ -72,7 +72,7 @@ If you need a feature-complete renderer, use
 * SVG Salamander &rarr;https://github.com/blackears/svgSalamander
 * JSVG &rarr;https://github.com/weisJ/jsvg
 
-Specially jsvg - yes, same name, I discovered this too late, sorry - is nearly feature-complete.
+Specially jsvg - is nearly feature-complete.
 But all of them a larger and render slower, which - I assume - is normal for real SVG-rendering.
 
 ### Usage in OpenIde/NetBeans
@@ -86,7 +86,7 @@ It can be completely converted to Java2D-shapes.
 
 The source can be found here: &rarr;https://upload.wikimedia.org/wikipedia/commons/b/b1/Flag_of_San_Marino.svg
 
-Converted and drawn with jSVG:<br>
+Converted and drawn with jSVGIcon:<br>
 ![Example_Flag_of_San_Marino.png](doc%2FExample_Flag_of_San_Marino.png) ![Example_Flag_of_San_Marino.png](doc%2FExample_Flag_of_San_Marino_small.png)<br>
 <sub>(not scalable) screenshots of the Painter in different scales </sub> 
 
@@ -123,7 +123,7 @@ them. Safe your computing power and the planet.
 
 See the SVG example for filter-effects at W3.org &rarr;https://www.w3.org/TR/SVG11/filters.html#AnExample  
 
-jSVG has _feGaussianBlur_ and _feOffset_, but doesn't have _feSpecularLighting_ or _feComposite_, so the output looks a bit simpler.
+jSVGIcon has _feGaussianBlur_ and _feOffset_, but doesn't have _feSpecularLighting_ or _feComposite_, so the output looks a bit simpler.
 
 ![w3_filter_example.png](doc%2Fw3_filter_example.png)
 

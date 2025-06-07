@@ -1,5 +1,5 @@
 group = "io.github.bweng20"
-version="1.5"
+version="1.6"
 
 subprojects {
     apply plugin: 'java'

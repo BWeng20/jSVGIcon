@@ -35,11 +35,11 @@ publishing {
             artifacts = [project(':minimalBuild').jar, project(':minimalBuild').sourcesJar, project(':minimalBuild').javadocJar, project(':minimalBuild').examplesJar, project(':allFeaturesBuild').jar]
 
             pom {
-                name = 'jSVG'
-                artifactId = 'jSVG'
+                name = 'jSVGIcon'
+                artifactId = 'jSVGIcon'
                 packaging = 'jar'
                 description = 'Draw icons and simple graphics from SVG that look great even on high-resolution screens.'
-                url = 'https://github.com/BWeng20/jSVG'
+                url = 'https://github.com/BWeng20/jSVGIcon'
                 licenses {
                     license {
                         name = 'unlicense'
@@ -54,9 +54,25 @@ publishing {
                     }
                 }
                 scm {
-                    connection = 'https://github.com:BWeng20/jSVG.git'
-                    developerConnection = 'https://github.com:BWeng20/jSVG.git'
-                    url = 'https://github.com/BWeng20/jSVG'
+                    connection = 'https://github.com:BWeng20/jSVGIcon.git'
+                    developerConnection = 'https://github.com:BWeng20/jSVGIcon.git'
+                    url = 'https://github.com/BWeng20/jSVGIcon'
+                }
+            }
+        }
+        relocation(MavenPublication) {
+            pom {
+                groupId = "io.github.bweng20"
+                artifactId = "jSVG"
+                version = "1.6"
+
+                distributionManagement {
+                    relocation {
+                        groupId = "io.github.bweng20"
+                        artifactId = "jSVGIcon"
+                        version = "1.6"
+                        message = "Relocated due to name conflict"
+                    }
                 }
             }
         }

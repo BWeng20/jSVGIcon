@@ -33,6 +33,7 @@ public class Context
 	public static Paint debugPaint_ = Color.RED;
 
 	public static Object renderingHint_Antialias_ = RenderingHints.VALUE_ANTIALIAS_ON;
+	public static Object renderingHint_FractionalMetrics_ =	RenderingHints.VALUE_FRACTIONALMETRICS_ON;
 
 	public boolean translateColor2Gray_ = false;
 
@@ -154,6 +155,7 @@ public class Context
 	public static void initGraphics(Graphics2D g2d)
 	{
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, Context.renderingHint_Antialias_);
+		g2d.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS, Context.renderingHint_FractionalMetrics_);
 	}
 
 
