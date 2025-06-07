@@ -30,7 +30,7 @@ publishing {
         }
     }
     publications {
-        jSVG(MavenPublication) {
+        jSVGIcon(MavenPublication) {
 
             artifacts = [project(':minimalBuild').jar, project(':minimalBuild').sourcesJar, project(':minimalBuild').javadocJar, project(':minimalBuild').examplesJar, project(':allFeaturesBuild').jar]
 
@@ -62,10 +62,30 @@ publishing {
         }
         relocation(MavenPublication) {
             pom {
+                name = 'jSVG'
                 groupId = "io.github.bweng20"
                 artifactId = "jSVG"
                 version = "1.6"
-
+                url = 'https://github.com/BWeng20/jSVGIcon'
+                description = 'Draw icons and simple graphics from SVG that look great even on high-resolution screens.'
+                licenses {
+                    license {
+                        name = 'unlicense'
+                        url = 'https://unlicense.org'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'bweng20'
+                        name = 'Bernd Wengenroth'
+                        email = 'Bernd.Wengenroth@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'https://github.com:BWeng20/jSVGIcon.git'
+                    developerConnection = 'https://github.com:BWeng20/jSVGIcon.git'
+                    url = 'https://github.com/BWeng20/jSVGIcon'
+                }
                 distributionManagement {
                     relocation {
                         groupId = "io.github.bweng20"
@@ -80,5 +100,6 @@ publishing {
 }
 
 signing {
-    sign publishing.publications.jSVG
+    sign publishing.publications.jSVGIcon
+    sign publishing.publications.relocation
 }
