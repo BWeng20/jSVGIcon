@@ -17,7 +17,8 @@ apply plugin: 'signing'
 publishing {
     repositories {
         maven {
-            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            url = "https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/"
+            // url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
             credentials {
                 // Place this two variable with the correct values in your
                 // <Gradle-User-Home>/gradle.properties
@@ -60,6 +61,7 @@ publishing {
                 }
             }
         }
+        /* Relocated 2025-06-08
         relocation(MavenPublication) {
             pom {
                 name = 'jSVG'
@@ -96,10 +98,10 @@ publishing {
                 }
             }
         }
-    }
+    } */
 }
 
 signing {
     sign publishing.publications.jSVGIcon
-    sign publishing.publications.relocation
+    // sign publishing.publications.relocation
 }
