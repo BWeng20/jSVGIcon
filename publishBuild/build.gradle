@@ -97,11 +97,12 @@ publishing {
                     }
                 }
             }
-        }
-    } */
+        } */
+    }
 }
 
 signing {
     sign publishing.publications.jSVGIcon
-    // sign publishing.publications.relocation
+   // sign publishing.publications.relocation
 }
+
